@@ -1,0 +1,26 @@
+<form (ngSubmit)="createStripeToken()" class="checkout">
+
+  <button click = "readFirstName()">Full Name</button>
+  <input [(ngModel)]="firstname" />
+  
+  <h4>
+
+  </h4>
+  <button click = "readFirstName()">Billing Address</button>
+  <input [(ngModel)]="firstname" />
+  <h4>
+
+  </h4>
+  <label for="card-info">Card Info</label>
+<div id="form-field">
+      <div id="card-info" #cardInfo></div>
+      <button id="submit-button" type="submit">
+          Pay ${{_totalAmount}}
+      </button>
+      <div id="card-errors" role="alert" *ngIf="cardError">
+          <mat-icon style="color: #f44336">cancel</mat-icon>
+          &nbsp;{{ cardError }} 
+          {{cardError}}
+      </div>
+  </div>
+</form>
